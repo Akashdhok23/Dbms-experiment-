@@ -1,0 +1,375 @@
+Objective:- To Implement the restrictions on the table.
+Data constraints: Besides the cell name, cell length and cell data type there are other parameters i.e. other data constrains that can be passed to the DBA at check creation time. The constraints can either be placed at column level or at the table level.
+
+Column Level Constraints: If the constraints are defined along with the column definition, it is called a column level constraint.
+Table Level Constraints: If the data constraint attached to a specify cell in a table reference the contents of another cell in the table then the user will have to use table level constraints.
+
+Null Value Concepts:- while creating tables if a row  locks a data value for particular column that value is said to be null . Column of any data types may contain null values unless the column was defined as not null when the table was created
+
+Syntax:
+
+Create table tablename
+(columnname data type (size) not null ……)
+
+Primary Key: primary key is one or more columns is a table used to uniquickly identity each row in the table. Primary key values must not be null and must be uniQuestion across the column. A multicolumn primary key is called composite primary key.
+
+Syntax: primary key as a column constraint
+Create table tablename
+(columnname datatype (size) primary key,….)
+Primary key as a table constraint
+Create table tablename
+(columnname datatype (size), columnname datatype( size)…
+Primary key (columnname,columnname));
+
+UniQuestion key concept:-A uniQuestion is similar to a primary key except that the purpose of a uniQuestion key is to ensure that information in the column for each record is uniQuestion as with telephone or devices license numbers. A table may have many uniQuestion keys.
+
+Syntax: UniQuestion as a column constraint.
+Create table table name
+(columnname datatype (size) uniQuestion);
+UniQuestion as table constraint:
+Create table tablename
+(columnname datatype (size),columnname datatype (size)…uniQuestion (columnname,columnname));
+
+Default value concept: At the line of cell creation a default value can be assigned to it. When the user is loading a record with values and leaves this cell empty, the DBA wil automatically load this cell with the default value specified. The data type of the default value should match the data type of the column
+
+Syntax:
+
+Create table tablename
+(columnname datatype (size) default value,….);
+
+Foreign Key Concept : Foreign key represents relationship between tables. A foreign key is column whose values are derived from the primary key of the same of some other table . the existence of foreign key implies that the table with foreign key is related to the primary key table from which the foreign key is derived .A foreign key must have corresponding primary key value in the primary key table to have meaning.
+Foreign key as a column constraint
+
+Syntax :
+Create table table name
+(columnname datatype (size) references another table name);
+
+Foreign key as a table constraint:
+
+Syntax :
+Create table name
+(columnname datatype (size)….
+primary key (columnname);
+foreign key (columnname)references table name);
+
+Check Integrity Constraints: Use the check constraints when you need to enforce intergrity rules that can be evaluated based on a logical expression following are a few examples of appropriate check constraints.
+A check constraints name column of the coient_master so that the name is entered in upper case.
+A check constraint on the client_no column of the client _master so that no client_no value starts with ‘c’
+
+Syntax:
+Create table tablename
+(columnname datatype (size) CONSTRAINT constraintname)
+Check (expression));
+
+
+Question.2 Create the following tables:
+Sales_master
+Columnname			Datatype	Size		Attributes
+Salesman_no			varchar2	6		Primary key/first letter                                                                                               	                                               		 must start with ‘s’
+Sal_name			varchar2	20		Not null
+Address			varchar2			Not null
+City			varchar2	20
+State			varchar2	20		
+Pincode			Number	6
+Sal_amt			Number	8,2		Not null, cannot be 0
+Tgt_to_get			Number	6,2		Not null, cannot be 0
+Ytd_sales			Number	6,2		Not null, cannot be 0
+Remarks			Varchar2	30
+
+
+
+Sales_order
+Columnname
+Datatype
+Size
+Attributes
+
+S_order_no
+varchar2
+6
+Primary/first letter  must be 0                                                                                                    
+
+S_order_date
+Date
+6
+Primary key reference clientno of client_master table
+
+Client_no
+Varchar2
+25
+
+
+Dely_add
+Varchar2
+6
+
+
+Salesman_no
+Varchar2
+6
+Foreign key references salesman_no of salesman_master table
+
+Dely_type
+Char
+1
+Delivery part(p)/full(f),default f
+
+Billed_yn
+Char
+1
+
+
+Dely_date
+Date
+
+Can not be lessthan s_order_date
+
+Order_status
+Varchar2
+10
+Values (‘in process’;’fulfilled’;back order’;’canceled
+
+
+
+
+Sales_order_details
+Column
+Datatype
+Size
+Attributes
+
+S_order_no
+Varchar2
+6
+Primary key/foreign key references s_order_no of sales_order
+
+Product_no
+Varchar2
+6
+Primary key/foreign key references product_no of product_master
+
+Qty_order
+Number
+8
+
+
+Qty_disp
+Number
+8
+
+
+Product_rate
+Number
+10,2
+
+
+
+Insert the following data into their respective tables using insert statement:
+Data for sales_man master table
+Salesman_no
+Salesman name
+Address
+City
+Pin code
+State
+Salamt
+Tgt_to_get
+Ytd
+Sales
+Remark
+
+500001
+Kiran
+A/14 worli
+Bombay
+400002
+Mah
+3000
+100
+50
+Good
+
+500002
+Manish
+65,nariman
+Bombay
+400001
+Mah
+3000
+200
+100
+Good
+
+500003
+Ravi
+P-7 Bandra
+Bombay
+400032
+Mah
+3000
+200
+100
+Good
+
+500004
+Ashish
+A/5 Juhu
+Bombay
+400044
+Mah
+3500
+200
+150
+Good
+
+
+
+(ii)
+Data for salesorder table:
+S_orderno
+S_orderdate
+Client no
+Dely type
+Bill yn 
+Salesman no
+Delay date
+Orderstatus
+
+019001
+12-jan-96
+0001
+F
+N
+50001
+20-jan-96
+Ip
+
+019002
+25-jan-96
+0002
+P
+N
+50002
+27-jan-96
+C
+
+016865
+18-feb-96
+0003
+F
+Y
+500003
+20-feb-96
+F
+
+019003
+03-apr-96
+0001
+F
+Y
+500001
+07-apr-96
+F
+
+046866
+20-may-96
+0004
+P
+N
+500002
+22-may-96
+C
+
+010008
+24-may-96
+0005
+F
+N
+500004
+26-may-96
+Ip
+
+
+(iii)
+Data for sales_order_details table:
+
+S_order no
+Product no
+Qty ordered
+Qty disp
+Product_rate
+
+019001
+P00001
+4
+4
+525
+
+019001
+P07965
+2
+1
+8400
+
+019001
+P07885
+2
+1
+5250
+
+019002
+P00001
+10
+0
+525
+
+046865
+P07868
+3
+3
+3150
+
+046865
+P07885
+10
+10
+5250
+
+019003
+P00001
+4
+4
+1050
+
+019003
+P03453
+2
+2
+1050
+
+046866
+P06734
+1
+1
+12000
+
+046866
+P07965
+1
+0
+8400
+
+010008
+P07975
+1
+0
+1050
+
+010008
+P00001
+10
+5
+525
+
+
+
