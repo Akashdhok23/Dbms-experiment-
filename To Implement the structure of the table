@@ -1,0 +1,55 @@
+
+Objective:- To Implement the structure of the table
+Modifying the Structure of Tables- Alter table command is used to changing the structure of a table. Using the alter table clause you cannot perform the following tasks:
+
+change the name of table
+change the name of column
+drop a column
+decrease the size of a table if table data exists.
+
+The following tasks you can perform through alter table command.
+
+Adding new columns:
+Syntax 
+ALTER TABLE tablename
+ADD (newcolumnname newdatatype (size));
+
+Modifying existing table
+Syntax:
+ALTER TABLE tablename
+MODIFY (newcolumnname newdatatype (size));
+
+NOTE: Oracle not allow constraints defined using the alter table, if the data in the table, violates such constraints.
+
+Removing/Deleting Tables- Following command is used for removing or deleting a table.
+
+Syntax:
+DROP TABLE tabename:
+
+Defining Integrity constraints in the ALTER TABLE command-
+
+You can also define integrity constraints using the constraint clause in the ALTER TABLE command. The following examples show the definitions of several integrity constraints.
+
+Add PRIMARY KEY-
+Syntax:
+ALTER TABLE tablename
+ADD PRIMARY KEY(columnname);
+
+Add FOREIGN KEY-
+Syntax:
+ALTER TABLE tablename
+ADD CONSTRAINT constraintname 
+FOREIGN KEY(columnname) REFERENCES tablename;
+Droping integrity constraints in the ALTER TABLE command:
+
+You can drop an integrity  constraint if the rule that if enforces is no longer true or if the constraint is no longer needed. Drop the constraint using the ALTER TABLE command with the DROP clause. The following examples illustrate the droping of integrity constraints.
+
+DROP the PRIMARY KEY-
+Syntax:
+ALTER TABLE tablename
+DROP PRIMARY KEY
+
+DROP FOREIGN KEY-
+Syntax:
+ALTER TABLE tablename
+DROP CONSTRAINT constraintname;
