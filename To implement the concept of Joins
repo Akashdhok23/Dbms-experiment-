@@ -1,0 +1,41 @@
+Objective:- To implement the concept of Joins
+
+Joint Multiple Table (Equi Join): Some times we require to treat more than one table as though manipulate data from all the tables as though the tables were not separate object but one single entity. To achieve this we have to join tables.Tables are joined  on column that have dame data type  and data with in tables.
+
+		The tables that have to be joined are specified in the FROM clause and the joining attributes in the WHERE clause.
+
+Algorithm for JOIN in SQL:
+Cartesian product of tables (specified in the FROM clause)
+Selection of rows that match (predicate in the WHERE clause)
+Project column specified in the SELECT clause.
+
+
+1. Cartesian product:-
+Consider two table student and course
+Select B.*,P.*
+FROM student B, course P;
+
+2. INNER JOIN:
+ Cartesian product followed by selection
+Select B.*,P.*
+FROM student B, Course P
+WHERE B.course # P.course # ;
+
+3. LEFT OUTER JOIN: 
+LEFT OUTER JOIN = Cartesian product + selection but include rows from the left table which are unmatched pat nulls in the values of attributes belonging to th e second table
+Exam:
+Select  B.*,P*
+FROM student B left join course p
+ON B.course # P.course #;
+
+4. RIGHT OUTER JOIN:
+RIGHT OUTER JOIN = Cartesian product + selection but include rows from right table which are unmatched
+Exam:
+Select B.*,P.*
+From student B RIGHT JOIN course P
+B.course# = P course # ;
+5. FULL OUTER JOIN
+ Exam 
+Select B.*,P.*
+From student B  FULL JOIN course P
+ On B.course # = P course # ;	
