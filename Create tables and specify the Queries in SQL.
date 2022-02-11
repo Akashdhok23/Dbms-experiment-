@@ -1,0 +1,111 @@
+
+Objective:   Create tables and specify the Queries in SQL.
+
+Theory & Concepts:
+
+Introduction about SQL- 
+ SQL (Structured Questionry Language) is a nonprocedural language, you specify what you want, not how to get it. A block structured format of English key words is used in this Questionry language. It has the following components.
+
+DDL (Data Definition Language)- 
+The SQL DDL provides command for defining relation schemas, deleting relations and modifying relation schema.
+
+DML (DATA Manipulation Language)-
+ It includes commands to insert tuples into, delete tuples from and modify tuples in the database.
+
+View definition- 
+The SQL DDL includes commands for defining views.
+Transaction Control- SQL includes for specifying the beginning and ending of transactions.
+
+Embedded SQL and Dynamic SQL-
+ Embedded and Dynamic SQL define how SQL statements can be embedded with in general purpose programming languages, such as C, C++, JAVA, COBOL, Pascal and Fortran.
+
+Integrity- 
+The SQL DDL includes commands for specifying integrity constraints that the data stored in the database must specify. Updates that violate integrity constraints are allowed.
+
+Authorization- 
+The SQL DDL includes commands for specifying access rights to relations and views.
+
+
+Data Definition Language- 
+
+The SQL DDL allows specification of not only a set of relations but also information about each relation, including-
+Schema for each relation
+The domain of values associated with each attribute.
+The integrity constraints.
+The set of indices to be maintained for each relation.
+The security and authorization information for each relation.
+The physical storage structure of each relation on disk.
+
+
+Domain types in SQL- 
+
+The SQL standard supports a variety of built in domain types, including-
+Char (n)- A fixed length character length string with user specified length .
+Varchar (n)- A variable character length string with user specified maximum length n.
+Int- An integer.
+Small integer- A small integer.
+Numeric (p, d)-A Fixed point number with user defined precision.
+Real, double precision- Floating point and double precision floating point numbers with machine dependent precision.
+Float (n)- A floating point number, with precision of at least n digits.
+Date- A calendar date containing a (four digit) year, month and day of  the month.
+Time- The time of day, in hours, minutes and seconds Eg. Time ’09:30:00’.
+Number- Number is used to store numbers (fixed or floating point).
+
+DDL statement for creating a table-
+
+Syntax-
+ Create table tablename
+(columnname datatype(size),  columnname datatype(size));
+
+Creating a table from a table-
+
+Syntax-
+ CREATE TABLE TABLENAME
+[(columnname, columnname, ………)]
+AS SELECT columnname, columnname……..FROM tablename;
+
+Insertion of data into tables-
+
+Syntax-
+ INSERT INTO tablename
+[(columnname, columnname, ………)]
+Values(expression, expression);
+
+Inserting data into a table from another table:
+
+Syntax- 
+INSERT INTO tablename
+SELECT columnname, columnname, …….
+FROM tablename;
+
+Insertion of selected data into a table from another table:
+
+Syntax-
+ INSERT INTO tablename
+SELECT columnname, columnname……..
+FROM tablename
+WHERE columnname= expression;
+
+Retrieving of data from the tables-
+
+Syntax-
+ SELECT * FROM tablename;
+
+The retrieving of specific columns from a table-
+
+Syntax-
+ SELECT  columnname, columnname, ….
+FROM tablename;
+
+Elimination of duplicates from the select statement-
+
+Syntax- 
+SELECT DISTINCT columnname, columnname
+FROM tablename;
+
+Selecting a data set from table data-
+
+Syntax-
+ SELECT columnname, columnname
+FROM tablename
+WHERE searchcondition;
