@@ -1,0 +1,90 @@
+ To Manupulate the Operations on the table.
+DML ( Data Manipulation Language) Data manipulation is 
+
+The retrieval of information stored in the database.
+The insertion of new information into the database.
+The deletion of information from the database.
+The modification of information stored by the appropriate data model. There are basically two types.
+Procedural DML:-  require a user to specify what data are  needed and how to get those data.
+ Non Procedural DML : require a user to specify what data are needed without specifying how to get  those data.
+
+
+Updating the content of a table:
+In creation situation we may wish to change a value in table without changing all values in the tuple . For this purpose the update statement can be used.
+
+Update table name
+Set columnname = experision, columnname =expression……
+Where columnname = expression;
+
+Deletion Operation:-
+ A delete reQuestionst is expressed in much the same way as Questionry. We can delete whole tuple ( rows) we can delete values on only particulars attributes.
+
+Deletion  of all rows
+
+Syntax:
+Delete from tablename :
+
+Deletion of specified number of rows
+Syntax:
+
+Delete from table name
+Where search condition ;
+
+Computation in expression lists used to select data
+
++ 	Addition		- Subtraction
+*	multiplication		** exponentiation
+/ Division			() Enclosed operation
+
+Renaming columns used with Expression Lists: - The default output column names can be renamed by the user if required
+
+Syntax:
+
+Select column name 		result_columnname,
+           Columnname		result_columnname,
+From table name;
+
+Logical Operators:
+ The logical operators that can be used in SQL sentenced are
+
+AND		all of must be included
+OR		any of may be included
+NOT		none of could be included
+
+Range Searching: Between operation is used for range  searching.
+Pattern Searching: 
+The most commonly used operation on string is pattern matching using the operation ‘like’ we describe patterns by using two special characters.
+
+Percent (%) ; the % character matches any substring we consider the following examples.
+‘Perry %’ matches any string beginning with perry
+‘% idge % matches any string containing’ idge as substring.
+‘ - - - ‘ matches any string exactly three characters.
+‘ - - - % matches any string of at least of three characters.
+Oracle functions: 
+Functions are used to manipulate data items and return result. function follow the format of function _name (argument1, argument2 ..) .An arrangement is user defined variable or constant. The structure of function is such that it accepts zero or more arguments.
+Examples:
+Avg		return average value of n
+
+Syntax:
+Avg ([distinct/all]n)
+Min 		return minimum value of expr.
+
+Syntax:
+MIN((distict/all )expr)
+Count		Returns the no of rows where expr is not null
+Syntax:
+Count ([distinct/all)expr]
+Count (*) 	Returns the no rows in the table, including duplicates and those with nulls.
+Max		 Return max value of expr
+
+Syntax:
+Max ([distinct/all]expr)
+Sum 		Returns sum of values of n
+
+Syntax:
+ Sum ([distinct/all]n) 
+Sorting of data in table
+Syntax:
+ Select columnname, columnname
+From table
+Order by columnname;
