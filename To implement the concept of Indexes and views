@@ -1,0 +1,53 @@
+Objective:- To implement the concept of Indexes and views.
+Indexes- An index is an ordered list of content of a column or group of columns in a table. An index created on the single column of the table is called simple index. When multiple table columns are included in the index it is called composite index.
+Creating an Index for a table:-
+Syntax (Simple)
+			CREATE INDEX index_name
+			ON tablename(column name);
+Composite Index:-
+			CREATE INDEX index_name
+			ON tablename(columnname,columnname);
+Creating an UniQuestion Index:-
+			CREATE UNIQUESTION INDEX indexfilename
+			ON tablename(columnname);
+Dropping Indexes:-
+			An index can be dropped by using DROP INDEX
+SYNTAX:-	
+			DROP INDEX indexfilename;
+Views:-
+		Logical data is how we want to see the current data in our database. Physical data is how this data is actually placed in our database.
+		Views are masks placed upon tables. This allows the programmer to develop a method via which we can display predetermined data to users according to our desire.
+		Views may be created fore the following reasons:
+
+The DBA stores the views as a definition only. Hence there is no duplication of data.
+Simplifies Questionries.
+Can be Questionried as a base table itself.
+Provides data security.
+Avoids data redundancy.
+
+Creation of Views:-
+Syntax:-
+		CREATE VIEW viewname AS
+		SELECT columnname,columnname
+		FROM tablename
+		WHERE columnname=expression_list;
+
+Renaming the columns of a view:-
+
+Syntax:-
+		CREATE VIEW viewname AS
+		SELECT newcolumnname….
+		FROM tablename
+		WHERE columnname=expression_list;
+
+Selecting a data set from a view-
+
+Syntax:-
+		SELECT columnname, columnname
+		FROM viewname
+		WHERE search condition;
+
+Destroying a view-
+
+Syntax:-
+		DROP VIEW viewname;
