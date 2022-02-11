@@ -1,0 +1,47 @@
+Objective:- To implement the concept of SubQuestionries.
+SubQuestionries:- A subQuestionry is a form of an SQL statement that appears inside another SQL statement. It also termed as nested Questionry. The statement containing a subQuestionry called a parent statement. The rows returned bu the subQuestionry are use by the following statement.
+It can be used by the following commands:
+To  insert records in the target table.
+To create tables and insert records in this table.
+To update records in the target table.
+To create view.
+To provide values for the condition in the WHERE , HAVING IN , SELECT,UPDATE, and DELETE statements.
+Exam:-
+Creating clientmaster table from oldclient_master, table
+
+Create table client_master
+AS SELECT * FROM oldclient_master;
+
+Using the Union, Intersect and Minus Clause:
+Union Clause:
+The user can put together multiple Questionries and combine their output using the union clause . The union clause merges the output of two or  more  Questionries into a single set of rows and column. The final output of union clause will be 
+
+Output: = Records only in Questionry one + records only in Questionry two + A single set of  records with is common in the both Questionries.
+
+Syntax:
+
+SELECT columnname, columname
+FROM tablename 1
+UNION
+SELECT columnname,  columnname
+From tablename2;
+
+
+Intersect Clause: The use can put together multiple Questionries and their output using the interest clause. The final output of the interest clause will be :
+
+Output =A single set of records which are common in both Questionries
+
+Syntax:
+SELECT  columnname, columnname
+FROM tablename 1
+INTERSECT
+SELECT columnname, columnname
+FROM tablename 2;
+
+MINUS CLAUSE:- The user can put together multiple Questionries and combine their output = records only in Questionry one
+Syntax:
+SELECT columnname, columnname
+FROM tablename ;
+MINUS
+SELECT columnname, columnname
+FROM tablename ;
